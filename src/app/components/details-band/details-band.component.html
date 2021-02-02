@@ -1,0 +1,16 @@
+<div *ngIf='selectedBand'>
+    Details section
+    <h2>{{selectedBand.name | uppercase}} Details</h2>
+    <p>Company: {{selectedBand.company}}</p>
+    <p>Genre: {{selectedBand.genre}}</p>
+    <p>Members:
+        <button (click)='memberDetails(member)' *ngFor='let member of selectedBand.members'>{{member}}</button>
+    </p>
+    <p>Songs: {{selectedBand.songs}}</p>
+
+</div>
+<div *ngIf='selectedMember'>
+    <h2>Zespoły w których gra członek o pseudonimie: {{selectedMember}}</h2>
+    <p *ngFor='let memberBand of memberBands'>{{memberBand}}</p>
+    
+</div>

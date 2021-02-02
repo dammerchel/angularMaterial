@@ -1,0 +1,19 @@
+<!-- <button (click)="increment()">Increment</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button> -->
+
+<h2>BandsList</h2>
+<ul>
+    <li *ngFor='let band of bands'>
+        <p [class.favourite]='band.name==favourites.favouriteBand || band.genre==favourites.favouriteGenre'>{{band.name}}
+            <button routerLink='/detailsBand/{{band.id}}'>Details</button>
+        </p>
+
+    </li>
+
+</ul>
+

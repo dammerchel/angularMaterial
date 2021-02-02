@@ -1,0 +1,64 @@
+<div class="body">
+    <p>
+        <mat-toolbar>
+            <button (click)='drawer.toggle()'>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="example-spacer"></span>
+            
+            <button class='item' routerLink='list'>List</button>
+
+            <span class="example-spacer"></span>
+            <button (click)='onFavourite()'>
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </mat-toolbar>
+    </p>
+    <p class="content">
+        <mat-drawer-container class="example-container" autosize>
+            <mat-drawer #drawer class="sidenav" mode="side">
+                <form [formGroup]='filterForm' (ngSubmit)='onSubmit()'>
+
+
+
+                    <div class='item-group'>
+                        <p>Insert band name</p>
+                        <p><input type="text" formControlName='bandName'></p>
+                    </div>
+
+
+                    <div class='item-group'>
+                        <p class='item'>Choose company</p>
+                        <p class='item'>
+                            <select formControlName='bandCompany'>
+                                <option *ngFor='let company of companyInput'>{{company}}</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class='item-group'>
+                        <p class='item'>Choose genres</p>
+
+                        <ul formArrayName='bandGenre' >
+                            <li class='item' *ngFor='let genre of genreInput;let i=index'>
+                                <mat-checkbox formControlName={{i}}>{{genre}}</mat-checkbox>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class='item-group'>
+                        <button type='submit' class='item'>Submit</button>
+                    </p>
+                </form>
+
+            </mat-drawer>
+
+            <div class="example-sidenav-content">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-container>
+    </p>
+    <p class="footer">
+        <mat-toolbar>
+            <span>Copyrighted by Damian Merchel</span>
+        </mat-toolbar>
+    </p>
+</div>
