@@ -70,6 +70,7 @@ export class BandsService {
     );
   }
 
+  /*
 
   //Funckja sprawdzajaca czy tablica a zawiera tablicę b
   includesArray(arrayA, arrayB): boolean {
@@ -95,6 +96,19 @@ export class BandsService {
     else {
       return true;
     }
+
+  }
+  */
+
+  includesArray(arrayA,arrayB):boolean{
+    let contains = true;
+    arrayA.forEach(element => {
+      contains = contains&&arrayB.includes(element);
+      console.log(contains);
+      
+    });
+    
+    return contains;
 
   }
 

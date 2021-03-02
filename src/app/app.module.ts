@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatDialogModule} from '@angular/material/dialog';
-import { DialogExampleComponent, DialogContentExampleDialog } from './dialog-example/dialog-example.component';
 import { ListComponent } from './components/list/list.component';
 import { DetailsBandComponent } from './components/details-band/details-band.component';
 import { DialogFavouriteComponent } from './components/dialog-favourite/dialog-favourite.component';
@@ -27,11 +26,10 @@ import { LocalStorageService } from './local-storage.service';
 
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
-    DialogExampleComponent,
-    DialogContentExampleDialog,      
+    AppComponent,        
     ListComponent,    
     DetailsBandComponent,    
     DialogFavouriteComponent,
