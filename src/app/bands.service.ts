@@ -101,10 +101,15 @@ export class BandsService {
   */
 
   includesArray(arrayA,arrayB):boolean{
+    console.log(arrayB);
+    if((arrayB==undefined) || (arrayB.length == 0)){
+      return true;
+    }
+    
     let contains = true;
+    
     arrayA.forEach(element => {
-      contains = contains&&arrayB.includes(element);
-      console.log(contains);
+      contains = contains&&arrayB.includes(element);      
       
     });
     
