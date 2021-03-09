@@ -1,0 +1,25 @@
+.container{    
+    margin: 10%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.image{
+    width: 70%;
+    
+}
+.list-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #85144b;
+    color: white;
+    padding: 0em 1em;
+    height: 3em;
+    margin-top: 0;   
+
+}
+.item{
+    
+}

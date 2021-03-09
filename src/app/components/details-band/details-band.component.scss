@@ -1,0 +1,68 @@
+.favourite{
+    color: #f9a825 ;
+}
+.list-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #85144b;
+    color: white;
+    padding: 0em 1em;
+    height: 3em;
+    margin-top: 0;
+    
+
+}
+.list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .description{
+        display: flex;
+        width: 20%;
+        justify-content: center;
+    }
+    
+    .avatar{
+        display: flex;
+        width: 10%;
+        justify-content: flex-start;        
+    }
+    .genre{
+        display: flex;
+        margin-right: 20px;
+    }
+    .name{
+        display: flex;
+        width: 20%;
+        justify-content: space-around;    
+         
+
+    }
+    .members{
+        display: flex;
+        width: 15%;
+        justify-content: flex-start;
+    }
+    .company{
+        width: 20%;
+        justify-content: center;
+    }
+    .favourite-icon{
+        width: 10%;
+        justify-content: end;
+    }
+    .bands{
+        margin-right: 20px;
+    }
+    .songs{
+        margin-right: 20px;
+    }
+
+    
+
+}
+.list-container{
+    
+}

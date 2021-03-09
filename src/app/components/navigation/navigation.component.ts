@@ -71,6 +71,7 @@ export class NavigationComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(
       data=>{
+        if(data != undefined)
         this.localStorageService.storeOnLocalStorage(data.favouriteBand,data.favouriteGenre);
       });
       

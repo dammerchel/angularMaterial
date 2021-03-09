@@ -1,16 +1,49 @@
 <div *ngIf='selectedBand'>
-    Details section
-    <h2>{{selectedBand.name | uppercase}} Details</h2>
-    <p>Company: {{selectedBand.company}}</p>
-    <p>Genre: {{selectedBand.genre}}</p>
-    <p>Members:
-        <button (click)='memberDetails(member)' *ngFor='let member of selectedBand.members'>{{member}}</button>
-    </p>
-    <p>Songs: {{selectedBand.songs}}</p>
+    <mat-toolbar class='list-header'>Możesz zapoznać się z członkami zespołu {{selectedBand.name | uppercase}}. Wybierz
+        muzyka w celu sprawdzenia, w jakich zespołach gra.</mat-toolbar>
 
-</div>
-<div *ngIf='selectedMember'>
-    <h2>Zespoły w których gra członek o pseudonimie: {{selectedMember}}</h2>
-    <p *ngFor='let memberBand of memberBands'>{{memberBand}}</p>
-    
+
+    <mat-toolbar class="list-item">
+        <span class="description">Avatar:</span>
+        <span class="avatar">
+            <mat-icon class="avatar">headphones</mat-icon>
+        </span>
+    </mat-toolbar>
+
+    <mat-toolbar class="list-item">
+        <span class="description">
+            <mat-icon>account_balance</mat-icon>Wydawca:
+        </span>
+        <span class="company">{{selectedBand.company | uppercase}}</span>
+    </mat-toolbar>
+
+    <mat-toolbar class="list-item">
+        <span class="description">Wykonywane gatunki:</span>
+        <span class="genre" *ngFor='let genre of selectedBand.genre'>{{genre}}</span>
+    </mat-toolbar>
+
+    <mat-toolbar class="list-item">
+        <span class="description">Piosenki:</span>
+        <span class="songs" *ngFor='let song of selectedBand.songs'>{{song}}</span>
+    </mat-toolbar>
+
+    <mat-toolbar class="list-item">
+        <span class="description">Członkowie:</span>
+        <span class="members" *ngFor='let member of selectedBand.members'>{{member | uppercase}}
+            <span style="width: 5px;"></span>
+            <button (click)='memberDetails(member)'>
+                <mat-icon>info</mat-icon>
+            </button></span>
+    </mat-toolbar>
+
+
+    <mat-toolbar class="list-item" *ngIf='selectedMember'>
+        <span class="description">Zespoły {{selectedMember}}</span>
+        <span class='bands' *ngFor='let memberBand of memberBands'>
+            {{memberBand}}            
+
+        </span>
+
+    </mat-toolbar>
+
 </div>
