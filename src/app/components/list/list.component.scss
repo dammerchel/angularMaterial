@@ -1,3 +1,52 @@
 .favourite{
-    color: chocolate;
+    color: #f9a825 ;
+}
+.list-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #85144b;
+    color: white;
+    padding: 0em 1em;
+    height: 3em;
+    margin-top: 0;
+    
+
+}
+.list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    .avatar{
+        display: flex;
+        width: 10%;
+        justify-content: start;        
+    }
+    .name{
+        display: flex;
+        width: 20%;
+        justify-content: space-around;    
+         
+
+    }
+    .members{
+        display: flex;
+        width: 10%;
+        justify-content: center;
+    }
+    .company{
+        width: 20%;
+        justify-content: center;
+    }
+    .favourite-icon{
+        width: 10%;
+        justify-content: end;
+    }
+
+    
+
+}
+.list-container{
+    
 }

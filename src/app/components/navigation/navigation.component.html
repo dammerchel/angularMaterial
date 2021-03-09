@@ -3,11 +3,11 @@
         <mat-icon>menu</mat-icon>
     </button>
 
-    <button mat-flat-button class='item' routerLink='home'>Home</button>
+    <button mat-flat-button class='item' routerLink='home'>Strona domowa</button>
 
-    <button mat-flat-button class='item' routerLink='list'>List</button>
+    <button mat-flat-button class='item' routerLink='list'>Lista zespołów</button>
 
-    <button mat-flat-button class='item' routerLink='about'>about</button>
+    <button mat-flat-button class='item' routerLink='about'>O nas</button>
     
     <button mat-flat-button (click)='onFavourite()'>
         <mat-icon>favorite</mat-icon>
@@ -50,8 +50,8 @@
 
     </mat-drawer>
 
-    <div class="navigation-content">
-        <router-outlet></router-outlet>
+    <div>
+        <router-outlet class="navigation-content"></router-outlet>
     </div>
 </mat-drawer-container>
 

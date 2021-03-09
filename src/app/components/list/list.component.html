@@ -1,19 +1,29 @@
-<!-- <button (click)="increment()">Increment</button>
+<mat-toolbar class='list-header'>Proszę, wybierz zespół z listy lub skorzystaj z dostępnych filtrów.</mat-toolbar>
 
-<div>Current Count: {{ count$ | async }}</div>
 
-<button (click)="decrement()">Decrement</button>
+<div *ngFor='let band of bands'>
+    <mat-toolbar class="list-item">
+        <mat-icon class="avatar">headphones</mat-icon>
 
-<button (click)="reset()">Reset Counter</button> -->
+        <span class='name'>
+            <span>
+                <mat-icon>title</mat-icon>{{band.name | uppercase}}
+            </span>
 
-<h2>BandsList</h2>
-<ul>
-    <li *ngFor='let band of bands'>
-        <p [class.favourite]='(band.name==favourites.favouriteBand) || (band.genre.includes(favourites.favouriteGenre))'>{{band.name}}
-            <button routerLink='/detailsBand/{{band.id}}'>Details</button>
-        </p>
+            <button routerLink='/detailsBand/{{band.id}}'>
+                <mat-icon>info</mat-icon>
+            </button>
+        </span>
 
-    </li>
+        <span class="members">
+            <mat-icon>supervised_user_circle</mat-icon>{{band.members.length}}
+        </span>
+        <span class="company"><mat-icon>account_balance</mat-icon>{{band.company}}</span>
+        <mat-icon
+            [class.favourite]='(band.name==favourites.favouriteBand) || (band.genre.includes(favourites.favouriteGenre))'>
+            star_rate
+        </mat-icon>
 
-</ul>
+    </mat-toolbar>
 
+</div>
