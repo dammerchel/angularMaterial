@@ -23,6 +23,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LocalStorageService } from './local-storage.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -35,7 +36,8 @@ import { LocalStorageService } from './local-storage.service';
     DialogFavouriteComponent,
     HomeComponent,
     AboutComponent,
-    NavigationComponent
+    NavigationComponent,
+    NotFoundComponent
     
   ],
   imports: [

@@ -1,64 +1,61 @@
-<div class="body">
-    <p>
-        <mat-toolbar>
-            <button (click)='drawer.toggle()'>
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span class="example-spacer"></span>
-            
-            <button class='item' routerLink='list'>List</button>
+<mat-toolbar class="navigation-header">
+    <button mat-flat-button class="first-item" (click)='drawer.toggle()'>
+        <mat-icon>menu</mat-icon>
+    </button>
 
-            <span class="example-spacer"></span>
-            <button (click)='onFavourite()'>
-                <mat-icon>favorite</mat-icon>
-            </button>
-        </mat-toolbar>
-    </p>
-    <p class="content">
-        <mat-drawer-container class="example-container" autosize>
-            <mat-drawer #drawer class="sidenav" mode="side">
-                <form [formGroup]='filterForm' (ngSubmit)='onSubmit()'>
+    <button mat-flat-button class='item' routerLink='home'>Home</button>
+
+    <button mat-flat-button class='item' routerLink='list'>List</button>
+
+    <button mat-flat-button class='item' routerLink='about'>about</button>
+    
+    <button mat-flat-button (click)='onFavourite()'>
+        <mat-icon>favorite</mat-icon>
+    </button>
+</mat-toolbar>
 
 
+<mat-drawer-container class="navigation-container" autosize>
+    <mat-drawer #drawer class="navigation-sidenav" mode="side">
 
-                    <div class='item-group'>
-                        <p>Insert band name</p>
-                        <p><input type="text" formControlName='bandName'></p>
-                    </div>
+        <form [formGroup]='filterForm' (ngSubmit)='onSubmit()'>
 
-
-                    <div class='item-group'>
-                        <p class='item'>Choose company</p>
-                        <p class='item'>
-                            <select formControlName='bandCompany'>
-                                <option *ngFor='let company of companyInput'>{{company}}</option>
-                            </select>
-                        </p>
-                    </div>
-                    <div class='item-group'>
-                        <p class='item'>Choose genres</p>
-
-                        <ul formArrayName='bandGenre' >
-                            <li class='item' *ngFor='let genre of genreInput;let i=index'>
-                                <mat-checkbox formControlName={{i}}>{{genre}}</mat-checkbox>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class='item-group'>
-                        <button type='submit' class='item'>Submit</button>
-                    </p>
-                </form>
-
-            </mat-drawer>
-
-            <div class="example-sidenav-content">
-                <router-outlet></router-outlet>
+            <div class='item-group'>
+                <p>Insert band name</p>
+                <p><input type="text" formControlName='bandName'></p>
             </div>
-        </mat-drawer-container>
-    </p>
-    <p class="footer">
-        <mat-toolbar>
-            <span>Copyrighted by Damian Merchel</span>
-        </mat-toolbar>
-    </p>
-</div>
+
+
+            <div class='item-group'>
+                <p class='item'>Choose company</p>
+                <p class='item'>
+                    <select formControlName='bandCompany'>
+                        <option *ngFor='let company of companyInput'>{{company}}</option>
+                    </select>
+                </p>
+            </div>
+            <div class='item-group'>
+                <p class='item'>Choose genres</p>
+
+                <ul formArrayName='bandGenre'>
+                    <li class='item' *ngFor='let genre of genreInput;let i=index'>
+                        <mat-checkbox formControlName={{i}}>{{genre}}</mat-checkbox>
+                    </li>
+                </ul>
+            </div>
+            <p class='item-group'>
+                <button type='submit' class='item'>Submit</button>
+            </p>
+        </form>
+
+    </mat-drawer>
+
+    <div class="navigation-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
+
+
+<mat-toolbar class="navigation-footer">
+    <span>Copyrighted by Damian Merchel 2021</span>
+</mat-toolbar>
